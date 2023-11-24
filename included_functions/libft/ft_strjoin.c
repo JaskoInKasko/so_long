@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 static char	*ft_asign(char const *s1, char const *s2, char *s3)
 {
@@ -50,11 +49,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3 = ft_asign(s1, s2, s3);
 	return (s3);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	char	s1[100] = "Jujutsu Kaisen ";
-	char	s2[100] = "Episode 9";
-	printf("%s", ft_strjoin(s1, s2));
-}*/

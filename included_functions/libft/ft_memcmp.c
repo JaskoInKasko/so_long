@@ -28,11 +28,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*#include <string.h>
-#include <stdio.h>
-int main(void)
-{
-    char    s1[20] = "Jujutsu Kaisen";
-    char    s2[20] = "Jujutsu Kaisem";
-    printf("%d", ft_memcmp(s1, s2, 13));
-}*/

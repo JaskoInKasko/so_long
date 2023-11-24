@@ -17,13 +17,3 @@ int	ft_isprint(int c)
 		return (16384);
 	return (0);
 }
-/*#include <stdio.h>
-#include <ctype.h>
-int	main(void)
-{
-	unsigned char	a;
-
-	a = 127;
-	printf("%d\n", ft_isprint(a));
-	printf("%d\n", isprint(a));
-}*/

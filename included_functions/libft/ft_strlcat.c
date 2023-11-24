@@ -32,12 +32,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[ldest + i++] = '\0';
 	return (lsrc + ldest);
 }
-/*#include <bsd/string.h>
-#include <stdio.h>
-int	main(void)
-{
-	char	a[30] = "This is noch";
-	char	b[20] = "a connected String";
-	printf("%s\n%s\n%zu\n", a, b, ft_strlcat(a, b, 20));
-	return (0);
-}*/

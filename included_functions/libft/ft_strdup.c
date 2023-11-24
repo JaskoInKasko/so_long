@@ -32,14 +32,3 @@ char	*ft_strdup(const char *s)
 	s1[i] = '\0';
 	return (s1);
 }
-/*#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char	s[15] = "Jujutsu Kaisen";
-	char	*m;
-	m = ft_strdup(s);
-	printf("%s\n", m);
-	free(m);
-	return (0);
-}*/

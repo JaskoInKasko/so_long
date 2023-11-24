@@ -30,22 +30,3 @@ void	ft_bzero(void *s, size_t n)
 		c++;
 	}
 }
-/*#include <strings.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	a[] = "ABCD EFGH";
-	int	b;
-	printf("%s\n", a);
-	bzero(a, 4);
-	//ft_bzero(a, 4);
-	b = 0;
-	while(b < 6)
-	{
-		printf("%d ", a[b]);
-		b++;
-	}
-	printf("\n");
-	return (0);
-}*/

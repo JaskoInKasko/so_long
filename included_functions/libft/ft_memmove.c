@@ -39,18 +39,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char	a[100] = "JujutsuKaisen";
-	char	b[100] = "JujutsuKeisenEpisode9";
-	char	a1[100] = "JujutsuKaisen";
-	char	b1[100] = "JujutsuKeisenEpisode9";
-
-	ft_memmove(a+7, b+3, 28);
-	printf("%s\n", a);
-	memmove(a1+7, b1+3, 28);
-	printf("%s\n", a1);
-	return (0);
-}*/

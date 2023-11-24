@@ -74,14 +74,3 @@ char	*ft_itoa(int n)
 	s = ft_malloc_str_asign(n, nb, len);
 	return (s);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	int		n;
-	char 	*res;
-	n = 2147483;
-	res = ft_itoa(n);
-	printf("%s", res);
-	//free(res);
-	return (0);
-}*/

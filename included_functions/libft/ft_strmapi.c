@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-/*char    *ft_something(unsigned int i, char c)
-{
-(void)i;
-(void)c;
-}*/
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
@@ -36,8 +32,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	s1[i] = '\0';
 	return (s1);
 }
-/*#include <stdio.h>
-int main(void)
-{
-    printf("%s", ft_strmapi("Jujutsu Kaisen", *ft_something));
-}*/

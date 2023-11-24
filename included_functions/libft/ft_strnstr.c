@@ -31,16 +31,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-/*#include <stdio.h>
-int main(void)
-{
-    char    big[50] = "Jujutsu Kaisen Episode Kaisen 8";
-    char    little[20] = "Kai";
-    char 	*m;
-    m = ft_strnstr(big, little, 11);
-    if (m != NULL)
-    	printf("%s\n", m);
-    else if (m == NULL)
-    	printf("null");
-    return (0);
-}*/

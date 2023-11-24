@@ -20,12 +20,3 @@ size_t	ft_strlen(const char *str)
 		c++;
 	return (c);
 }
-/*#include <string.h>
-#include <stdio.h>
-int	main(void)
-{
-	char	a[] = "Jujutsu Kaisen";
-	printf("%d\n", ft_strlen(a));
-	printf("%lu\n", strlen(a));
-	return (0);
-}*/

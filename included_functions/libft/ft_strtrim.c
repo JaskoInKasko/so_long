@@ -53,10 +53,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s2[i] = '\0';
 	return (s2);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	char	s1[15] = "xxxxxxxxJuju";
-	char	set[30] = "Juju";
-	printf("%s", ft_strtrim(s1, set));
-}*/

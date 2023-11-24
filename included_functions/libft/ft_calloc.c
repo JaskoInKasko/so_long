@@ -32,26 +32,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_memset(ptr, 0, m_size);
 	return (ptr);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	size_t	nmemb;
-	size_t	size;
-	size_t	i;
-	int		*m;
-
-	nmemb = 4294967295;
-	size = sizeof(int);
-	i = 0;
-	m = (int *)ft_calloc(nmemb, size);
-	if (m == NULL)
-		return (0);
-	while(i < nmemb)
-	{
-		printf("%d\n", *m);
-		i++;
-	}
-	printf("\n");
-	free((void *)m);
-	return (0);
-}*/

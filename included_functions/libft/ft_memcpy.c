@@ -29,18 +29,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char	a[100] = "JujutsuKaisen";
-	const char	b[100] = "JujutsuKeisenEpisode9";
-	char	a1[100] = "JujutsuKaisen";
-	const char	b1[100] = "JujutsuKeisenEpisode9";
-
-	ft_memcpy(a+7, b+3, 58);
-	puts(a);
-	memcpy(a1+7, b1+3, 28);
-	puts(a1);
-	return (0);
-}*/

@@ -74,7 +74,7 @@ char	*get_next_line(int fd)
 	}
 	str[zero] = '\0';
 	rest[i] = '\0';
-	str = (ft_strlen(str) + 1) = '\0';
+	str[ft_strlen(str) + 1] = '\0';
 	if (!str)
 		return (NULL);
 	return (str);

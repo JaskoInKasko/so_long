@@ -31,14 +31,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-    char a [9] = "ABCD EFGH";
-    ft_memset(a, 120, 10);
-    printf("%s\n", a);
-    //memset(a, 120, 10);
-    printf("%s\n", a);
-    return (0);
-}*/

@@ -30,10 +30,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		}
 	}
 }
-/*int main(void)
-{
-    char    s[15] = "Jujutsu Kaisen";
-    int    *m;
-    ft_striteri(s, ft_changestr);
-    return (0);
-}*/

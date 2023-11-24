@@ -19,14 +19,3 @@ int	ft_isalnum(int c)
 		return (8);
 	return (0);
 }
-/*#include <stdio.h>
-#include <ctype.h>
-int	main(void)
-{
-	unsigned char	a;
-
-	a = 'S';
-	printf("%d\n", ft_isalnum(a));
-	printf("%d\n", isalnum(a));
-	return (0);
-}*/

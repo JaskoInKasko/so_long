@@ -34,9 +34,3 @@ int	ft_atoi(const char *nptr)
 	res = res * nb;
 	return (res);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	char	nptr[] = "   +-+2345";
-	printf("%d", ft_atoi(nptr));
-}*/

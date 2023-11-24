@@ -66,29 +66,3 @@ int	ft_printf(const char *format, ...)
 	va_end(arg);
 	return (len);
 }
-
-#include <stdio.h>
-int main(void)
-{
-    printf("%p", NULL);
-    printf("\n");
-    ft_printf("%u", -1);
-    printf("\n");
-    ft_printf("%x", -1);
-	printf("\n");
-    ft_printf("%%");
-    printf("\n");
-	ft_printf("%%%");
-	printf("\n");
-	ft_printf("%%%%");
-	printf("\n");
-	ft_printf("%%%%%");
-	printf("\n");
-	ft_printf("  %%  %%  %%  ");
-	printf("\n");
-    ft_printf("%p\n", 0, 0);
-    ft_printf("%randomtext%");
-	printf("\n");
-    ft_printf("%ra%");
-    return (0);
-}

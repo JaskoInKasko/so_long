@@ -28,12 +28,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[c] = '\0';
 	return (len);
 }
-/*#include <bsd/string.h>
-#include <stdio.h>
-int	main(void)
-{
-	char	a[] = "Jujutsu Kaisen";
-	char	b[] = "Season 2";
-	printf("%s\n%s\n%ld\n",a, b, strlcpy(b, a, 30));
-	return (0);
-}*/

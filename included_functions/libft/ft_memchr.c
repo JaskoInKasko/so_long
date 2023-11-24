@@ -25,15 +25,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-/*#include <string.h>
-#include <stdio.h>
-int	main(void)
-{
-	char	s[15] = "Jujutsu Kaisen";
-	char	c;
-	char	*m;
-	
-	c = 't';
-	m = ft_memchr(s, c, 5);
-	printf("%s\n%s\n", s, m);
-}*/

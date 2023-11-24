@@ -17,13 +17,3 @@ int	ft_isalpha(int c)
 		return (1024);
 	return (0);
 }
-/*#include <stdio.h>
-#include <ctype.h>
-int	main(void)
-{
-	unsigned char	a;
-
-	a = 'A';
-	printf("%d\n", ft_isalpha(a));
-	printf("%d\n", isalpha(a));
-}*/	

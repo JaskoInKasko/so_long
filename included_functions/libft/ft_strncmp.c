@@ -28,12 +28,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-/*#include <string.h>
-#include <stdio.h>
-int	main(void)
-{
-	char	s1[20] = "Jujutsu Kaisen";
-	char	s2[20] = "Jujutsu Kaiseni";
-	printf("%d\n", ft_strncmp(s1, s2, 14));
-}*/

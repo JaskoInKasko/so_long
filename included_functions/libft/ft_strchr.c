@@ -23,11 +23,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (0);
 }
-/*#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-    char    s[] = "Jujutsu Kaitsen";
-    char    letter = 't';
-    printf("%s\n", ft_strchr(s, letter));
-}*/

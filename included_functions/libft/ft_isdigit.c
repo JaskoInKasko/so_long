@@ -16,15 +16,4 @@ int	ft_isdigit(int c)
 	if (c >= '0' && c <= '9')
 		return (2048);
 	return (0);
-}
-/*#include <stdio.h>
-#include <ctype.h>
-int	main(void)
-{
-	unsigned char	a;
-
-	a = '0';
-	printf("%d\n", ft_isdigit(a));
-	printf("%d\n", isdigit(a));
-	return (0);
-}*/	
+}	

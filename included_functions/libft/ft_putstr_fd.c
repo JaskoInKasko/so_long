@@ -22,8 +22,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-/*int main(void)
-{
-    char    s[15] = "Jujutsu Kaisen";
-    ft_putstr_fd(s, 1);
-}*/
