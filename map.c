@@ -11,24 +11,18 @@
 /* ************************************************************************** */
 #include "so_long.h"
 
-int	ft_valid_char(const char c)
+/*int	ft_map_valid_char(char *line, int fd)
 {
-	if(!(c == '0' && c == '1' && c == 'C' && c == 'E' && c == 'P'))
-		return (0);
-	return (1);
-}
-
-int	ft_map_is_valid(char *line, int fd)
-{
-	int	i;
+	int		i;
+	char	c;
 
 	i = 0;
 	while(line[i] != '\0')
 	{
-		if(ft_valid_char(line[i]) == 1)
+		c = line[i];
+		if(!(c == '0' || c == '1' || c == 'C' || c == 'E' || c == 'P'))
 		{
-			ft_printf("Error\nInvalid character/s in the map!");
-			ft_printf(" Only valid characters: 0 1 C E P\n");
+			ft_map_error(5);
 			free(line);
 			close(fd);
 			return (0);
@@ -36,47 +30,36 @@ int	ft_map_is_valid(char *line, int fd)
 		i++;
 	}
 	return (1);
-}
+}*/
 
-int	ft_open_read_map(const char	*map)
+int	ft_fill_fullmap(t_map_data *map)
 {
-	char	*line;
-	char	buffer[MAX_MAP_SIZE][MAX_MAP_SIZE];
 	int		fd;
-	int		rows;
-	int		columns;
-	int		i;
 
-	rows = 0;
-	columns = 0;
-	fd = open(map, O_RDONLY);
+	fd = open(map->filename, O_RDONLY);
 	if(fd == -1)
 		return (0);
 	while(1)
 	{
-		line = get_next_line(fd);
-		if(line == NULL)
+		map->line = get_next_line(fd);
+		if(!map->line)
 			break ;
-		if(ft_map_is_valid(line, fd) == 0)
-			return (0);
-		i = 0;
-		while(line[i] != '\0')
-		{
-			buffer[rows][columns] = line[i];
-			i++;
-			columns++;
-		}
-		columns = 0;
-		rows++;
-		free(line);
+		map->line_cpy = ft_strjoin(map->line_cpy, map->line);
+		if(!map->line_cpy)
+			return(close(fd), free(map->line), 0);
+		map->rows++;
+		free(map->line);
 	}
 	close (fd);
+	map->fullmap = ft_split(map->line_cpy, '\n');
+	if(!map->fullmap)
+		free(map->fullmap);
 	return (1);
 }
 
-int	main(void)
+int	ft_valid_map(t_map_data *map)
 {
-	char	str[30] = "maps/map_1.ber";
-	ft_open_read_map(str);
-	return (0);
+	if((ft_fill_fullmap(map)) == 0)
+		return (0);
+	return (1);
 }

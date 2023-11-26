@@ -21,9 +21,9 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char *s2, int len);
-size_t	ft_strlen(const char *str);
-char	*ft_strchr(char *s, int c);
-char	*ft_strdup(const char *s);
+char	*ft_strjoin_GNL(char *s1, char *s2);
+size_t	ft_strlen_GNL(const char *str);
+char	*ft_strchr_GNL(char *s, int c);
+char	*ft_strdup_GNL(const char *s);
 
 #endif

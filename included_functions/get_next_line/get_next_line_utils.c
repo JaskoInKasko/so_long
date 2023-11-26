@@ -11,15 +11,17 @@
 /* ************************************************************************** */
 #include "get_next_line.h"
 
-char	*ft_strjoin(char *s1, char *s2, int len)
+char	*ft_strjoin_GNL(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
+	int		len;
 	char	*s3;
 
+	len = 0;
 	if (s1 == NULL || s2 == NULL)
 		return (free(s1), NULL);
-	len = (ft_strlen(s1) + ft_strlen(s2));
+	len = (ft_strlen_GNL(s1) + ft_strlen_GNL(s2));
 	i = 0;
 	j = 0;
 	s3 = (char *)malloc((len + 1) * sizeof(char));
@@ -38,7 +40,7 @@ char	*ft_strjoin(char *s1, char *s2, int len)
 	return (s3);
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen_GNL(const char *str)
 {
 	int	c;
 
@@ -50,7 +52,7 @@ size_t	ft_strlen(const char *str)
 	return (c);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr_GNL(char *s, int c)
 {
 	if (s == NULL)
 		return (0);
@@ -65,7 +67,7 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup_GNL(const char *s)
 {
 	size_t	i;
 	size_t	size;
@@ -74,7 +76,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	size = ft_strlen(s);
+	size = ft_strlen_GNL(s);
 	s1 = (char *)malloc((size + 1) * sizeof(char));
 	if (s1 == NULL)
 		return (NULL);
