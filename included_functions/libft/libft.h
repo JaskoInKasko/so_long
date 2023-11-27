@@ -64,5 +64,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 //		EXTRA FUNCTIONS
+char	*ft_strjoin_free(char *s1, char *s2);
 
 #endif

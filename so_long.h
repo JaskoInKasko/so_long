@@ -18,6 +18,12 @@ typedef struct s_map_data
 	int		rows;
 	char	**fullmap;
 }	t_map_data;
-int	ft_valid_map(t_map_data *map);
+
+//		MAP
+int		ft_valid_map(t_map_data *map);
+
+//		MAP_UTILS
+void	ft_free_map(t_map_data *map);
+void	ft_map_errors(t_map_data *map, int n);
 
 #endif
