@@ -29,10 +29,10 @@ static char	*ft_read_str(char *buffer, int fd)
 	char	*str;
 
 	readb = 1;
-	str = ft_strdup_GNL(buffer);
+	str = ft_strdup_gnl(buffer);
 	if (!str)
 		return (NULL);
-	while (readb > 0 && !ft_strchr_GNL(buffer, '\n'))
+	while (readb > 0 && !ft_strchr_gnl(buffer, '\n'))
 	{
 		readb = read(fd, buffer, BUFFER_SIZE);
 		if (readb == -1)
@@ -42,7 +42,7 @@ static char	*ft_read_str(char *buffer, int fd)
 			return (NULL);
 		}
 		buffer[readb] = '\0';
-		str = ft_strjoin_GNL(str, buffer);
+		str = ft_strjoin_gnl(str, buffer);
 		if (str == NULL)
 			buffer[0] = '\0';
 		if (str == NULL)
@@ -74,7 +74,7 @@ char	*get_next_line(int fd)
 	}
 	str[zero] = '\0';
 	rest[i] = '\0';
-	str[ft_strlen_GNL(str)] = '\0';
+	str[ft_strlen_gnl(str)] = '\0';
 	if (!str)
 		return (NULL);
 	return (str);

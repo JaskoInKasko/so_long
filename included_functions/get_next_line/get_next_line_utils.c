@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "get_next_line.h"
 
-char	*ft_strjoin_GNL(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
@@ -21,7 +21,7 @@ char	*ft_strjoin_GNL(char *s1, char *s2)
 	len = 0;
 	if (s1 == NULL || s2 == NULL)
 		return (free(s1), NULL);
-	len = (ft_strlen_GNL(s1) + ft_strlen_GNL(s2));
+	len = (ft_strlen_gnl(s1) + ft_strlen_gnl(s2));
 	i = 0;
 	j = 0;
 	s3 = (char *)malloc((len + 1) * sizeof(char));
@@ -40,7 +40,7 @@ char	*ft_strjoin_GNL(char *s1, char *s2)
 	return (s3);
 }
 
-size_t	ft_strlen_GNL(const char *str)
+size_t	ft_strlen_gnl(const char *str)
 {
 	int	c;
 
@@ -52,7 +52,7 @@ size_t	ft_strlen_GNL(const char *str)
 	return (c);
 }
 
-char	*ft_strchr_GNL(char *s, int c)
+char	*ft_strchr_gnl(char *s, int c)
 {
 	if (s == NULL)
 		return (0);
@@ -67,7 +67,7 @@ char	*ft_strchr_GNL(char *s, int c)
 	return (0);
 }
 
-char	*ft_strdup_GNL(const char *s)
+char	*ft_strdup_gnl(const char *s)
 {
 	size_t	i;
 	size_t	size;
@@ -76,7 +76,7 @@ char	*ft_strdup_GNL(const char *s)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	size = ft_strlen_GNL(s);
+	size = ft_strlen_gnl(s);
 	s1 = (char *)malloc((size + 1) * sizeof(char));
 	if (s1 == NULL)
 		return (NULL);

@@ -1,4 +1,4 @@
-#ifndef	SO_LONG_H
+#ifndef SO_LONG_H
 # define SO_LONG_H
 # include <stdlib.h>
 # include "included_functions/libft/libft.h"
@@ -17,6 +17,10 @@ typedef struct s_map_data
 	char	*line_cpy;
 	int		columns;
 	int		rows;
+	int		x;
+	int		y;
+	int		flagP;
+	int		flagE;
 	char	**fullmap;
 }	t_map_data;
 
@@ -26,5 +30,6 @@ int		ft_valid_map(t_map_data *map);
 //		MAP_UTILS
 void	ft_free_map(t_map_data *map);
 void	ft_map_errors(t_map_data *map, int n);
+void	ft_short_function(t_map_data *map);
 
 #endif
