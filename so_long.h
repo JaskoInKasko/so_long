@@ -11,6 +11,7 @@
 
 typedef struct s_map_data
 {
+	int		fd;
 	char	*filename;
 	char	*line;
 	char	*line_cpy;

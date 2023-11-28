@@ -65,5 +65,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 //		EXTRA FUNCTIONS
 char	*ft_strjoin_free(char *s1, char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif
