@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 #include "so_long.h"
 
+void	ft_game_init(t_game *game)
+{
+	game->player_x = 0;
+	game->player_y = 0;
+	game->coin_x = 0;
+	game->coin_y = 0;
+	game->exit_x = 0;
+	game->exit_y = 0;
+}
+
 void	ft_map_init(t_map_data *map, char *argv[])
 {
 	map->filename = argv[1];
@@ -20,16 +30,19 @@ void	ft_map_init(t_map_data *map, char *argv[])
 	map->y = 0;
 	map->flagP = 0;
     map->flagE = 0;
+	map->flagC = 0;
 }
 
 int	main(int argc, char *argv[])
 {
 	t_map_data	map;
+	t_game		game;
 
 	if (argc == 2)
 	{
+		ft_game_init(&game);
 		ft_map_init(&map, argv);
-		ft_valid_map(&map);
+		ft_valid_map(&game, &map);
 		ft_free_map(&map);
 	}
 	else

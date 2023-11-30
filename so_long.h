@@ -9,6 +9,17 @@
 #  define MAX_MAP_SIZE 500
 # endif
 
+typedef struct s_game
+{
+	int	player_x;
+	int	player_y;
+	int	coin_x;
+	int	coin_y;
+	int	exit_x;
+	int	exit_y;
+}	t_game;
+
+
 typedef struct s_map_data
 {
 	int		fd;
@@ -21,15 +32,18 @@ typedef struct s_map_data
 	int		y;
 	int		flagP;
 	int		flagE;
+	int		flagC;
 	char	**fullmap;
 }	t_map_data;
 
 //		MAP
-int		ft_valid_map(t_map_data *map);
+int		ft_valid_map(t_game *game, t_map_data *map);
 
 //		MAP_UTILS
 void	ft_free_map(t_map_data *map);
 void	ft_map_errors(t_map_data *map, int n);
 void	ft_short_function(t_map_data *map);
+void	ft_get_positions(t_game *game, t_map_data *map);
+void	ft_map_valid_path(t_game *game, t_map_data *map);
 
 #endif

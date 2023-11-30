@@ -48,21 +48,18 @@ int	ft_map_lines_len_and_char(t_map_data *map)
 		}
 		x++;
 	}
-	if (x < 2)
+	if (x < 2 || y < 3)
 		ft_map_errors(map, 15);
 	return (1);
 }
 
-int	ft_map_is_wall_and_no_dup(t_map_data *map)
+int	ft_map_is_wall_and_no_dup(t_game *game, t_map_data *map)
 {
 	while (map->fullmap[map->x] != NULL)
 	{
 		while (map->y < map->columns)
 		{
-			if (map->fullmap[map->x][map->y] == 'P')
-				map->flagP++;
-			if (map->fullmap[map->x][map->y] == 'E')
-				map->flagE++;
+			ft_get_positions(game, map);
 			if (map->fullmap[0][map->y] != '1' ||
 				map->fullmap[map->rows - 1][map->y] != '1')
 				ft_map_errors(map, 50);
@@ -74,7 +71,8 @@ int	ft_map_is_wall_and_no_dup(t_map_data *map)
 		map->x++;
 		map->y = 0;
 	}
-	if (map->flagP != 1 || map->flagE != 1)
+	map->x = 0;
+	if (map->flagP != 1 || map->flagE != 1 || map->flagC < 1)
 		ft_map_errors(map, 55);
 	return (1);
 }
@@ -106,11 +104,12 @@ int	ft_fill_fullmap(t_map_data *map)
 	return (1);
 }
 
-int	ft_valid_map(t_map_data *map)
+int	ft_valid_map(t_game *game, t_map_data *map)
 {
 	ft_map_extension(map);
 	ft_fill_fullmap(map);
 	ft_map_lines_len_and_char(map);
-	ft_map_is_wall_and_no_dup(map);
+	ft_map_is_wall_and_no_dup(game, map);
+	ft_map_valid_path(game, map);
 	return (1);
 }

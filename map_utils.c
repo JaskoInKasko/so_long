@@ -45,15 +45,39 @@ void	ft_map_errors(t_map_data *map, int n)
 		ft_printf(" Only valid characters: 0 1 C E P!\n");
 	}
 	else if (n == 15)
-		ft_printf("Error\nTo less lines\n");
+		ft_printf("Error\nInvalid map size!\n");
 	else if (n == 50)
 		ft_printf("Error\nMap not surrounded by walls!\n");
 	else if (n == 55)
 		ft_printf("Error\nWrong amount of objects in map!\n");
+	else if (n == 60)
+		ft_printf("Error\nNo valid path!\n");
 	else if (n)
 		ft_no_map_alloc(map, n);
 	ft_free_map(map);
 	exit(EXIT_FAILURE);
+}
+
+void	ft_get_positions(t_game *game, t_map_data *map)
+{
+	if (map->fullmap[map->x][map->y] == 'P')
+	{
+		game->player_x = map->x;
+		game->player_y = map->y;
+		map->flagP++;
+	}
+	if (map->fullmap[map->x][map->y] == 'E')
+	{
+		game->exit_x = map->x;
+		game->exit_y = map->y;
+		map->flagE++;
+	}
+	if (map->fullmap[map->x][map->y] == 'C')
+	{
+		game->coin_x = map->x;
+		game->coin_y = map->y;
+		map->flagC++;
+	}
 }
 
 void	ft_short_function(t_map_data *map)
