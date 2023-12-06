@@ -1,11 +1,16 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
+# include <mlx.h>
 # include "included_functions/libft/libft.h"
 # include "included_functions/ft_printf/ft_printf.h"
 # include "included_functions/get_next_line/get_next_line.h"
 
+# define WIN_WIDTH 1920
+# define WIN_HEIGHT  1080
 typedef struct s_game
 {
+	void	*mlx;
+	void	*mlx_win;
 	int	player_x;
 	int	player_y;
 	int	coin_x;
@@ -14,6 +19,21 @@ typedef struct s_game
 	int	exit_y;
 }	t_game;
 
+typedef struct s_image
+{
+	void	*player_up;
+	void	*player_up2;
+	void	*player_down;
+	void	*player_down2;
+	void	*player_left;
+	void	*player_left2;
+	void	*player_right;
+	void	*player_right2;
+	void	*coin;
+	void	*exit_open;
+	void	*exit_close;
+	void	*wall;
+}	t_image;
 
 typedef struct s_map_data
 {

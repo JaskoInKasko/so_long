@@ -37,13 +37,15 @@ int	main(int argc, char *argv[])
 {
 	t_map_data	map;
 	t_game		game;
+	t_image		image;
 
 	if (argc == 2)
 	{
-		ft_game_init(&game);
 		ft_map_init(&map, argv);
 		ft_valid_map(&game, &map);
 		ft_free_map(&map);
+		ft_mlx_init(&game);
+		ft_get_image(&image);
 	}
 	else
 		ft_printf("Error\nWrong number of arguments! Expected: 2!\n");
