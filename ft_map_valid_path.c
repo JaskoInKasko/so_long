@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "so_long.h"
 
-void ft_map_traverse(t_game *game, t_map_data *map, int x, int y)
+void ft_map_traverse(t_map_data *map, int x, int y)
 {
     char    current;
 
@@ -32,15 +32,15 @@ void ft_map_traverse(t_game *game, t_map_data *map, int x, int y)
     }
     else
         return ;
-    ft_map_traverse(game, map, x - 1, y);
-    ft_map_traverse(game, map, x + 1, y);
-    ft_map_traverse(game, map, x, y - 1);
-    ft_map_traverse(game, map, x, y + 1);
+    ft_map_traverse(map, x - 1, y);
+    ft_map_traverse(map, x + 1, y);
+    ft_map_traverse(map, x, y - 1);
+    ft_map_traverse(map, x, y + 1);
 }
 
 void ft_map_valid_path(t_game *game, t_map_data *map)
 {
-    ft_map_traverse(game, map, game->player_x, game->player_y);
+    ft_map_traverse(map, game->player_x, game->player_y);
     ft_printf("P: %d\nE: %d\nC: %d\n", map->flagP, map->flagE, map->flagC);
     if (map->flagC != 0 || map->flagE != 0)
         ft_map_errors(map, 60);

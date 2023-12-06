@@ -1,13 +1,8 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include <stdlib.h>
 # include "included_functions/libft/libft.h"
 # include "included_functions/ft_printf/ft_printf.h"
 # include "included_functions/get_next_line/get_next_line.h"
-
-# ifndef MAX_MAP_SIZE
-#  define MAX_MAP_SIZE 500
-# endif
 
 typedef struct s_game
 {
@@ -34,6 +29,7 @@ typedef struct s_map_data
 	int		flagE;
 	int		flagC;
 	char	**fullmap;
+	char	**fullmap_cpy;
 }	t_map_data;
 
 //		MAP

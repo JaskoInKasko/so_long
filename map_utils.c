@@ -31,7 +31,8 @@ void	ft_no_map_alloc(t_map_data *map, int n)
 		free(map->line);
 	if (n == 20 || n == 35 || n == 40)
 		close(map->fd);
-	free(map->line_cpy);
+	if (n != 25)
+		free(map->line_cpy);
 	exit(EXIT_FAILURE);
 }
 
@@ -85,7 +86,8 @@ void	ft_short_function(t_map_data *map)
 	if (map->line_cpy[ft_strlen(map->line_cpy) - 1] == '\n')
 		ft_map_errors(map, 20);
 	map->fullmap = ft_split(map->line_cpy, '\n');
-	if (!map->fullmap)
+	map->fullmap_cpy = ft_split(map->line_cpy, '\n');
+	if (!map->fullmap || !map->fullmap_cpy)
 		ft_map_errors(map, 45);
 }
 
@@ -94,10 +96,12 @@ void	ft_free_map(t_map_data *map)
 	int	x;
 
 	x = 0;
-	while (map->fullmap[x] != NULL)
+	while (map->fullmap[x] != NULL || map->fullmap_cpy[x] != NULL)
 	{
 		free(map->fullmap[x]);
+		free(map->fullmap_cpy[x]);
 		x++;
 	}
 	free(map->fullmap);
+	free(map->fullmap_cpy);
 }
