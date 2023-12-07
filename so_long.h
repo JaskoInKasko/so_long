@@ -33,6 +33,7 @@ typedef struct s_image
 	void	*exit_open;
 	void	*exit_close;
 	void	*wall;
+	void	*floor;
 }	t_image;
 
 typedef struct s_map_data
