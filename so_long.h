@@ -7,6 +7,7 @@
 
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT  1080
+# define PXL 100
 typedef struct s_game
 {
 	void	*mlx;
@@ -62,5 +63,11 @@ void	ft_map_errors(t_map_data *map, int n);
 void	ft_short_function(t_map_data *map);
 void	ft_get_positions(t_game *game, t_map_data *map);
 void	ft_map_valid_path(t_game *game, t_map_data *map);
+
+//		GAME
+void	ft_mlx_init(t_game *game, t_map_data *map);
+void	ft_get_image(t_game *game, t_image *image);
+void	ft_image_type(t_game *game, t_map_data *map, t_image *image);
+void	ft_render_map(t_game *game, t_map_data *map, t_image *image);
 
 #endif
