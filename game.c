@@ -14,7 +14,11 @@
 void	ft_mlx_init(t_game *game, t_map_data *map)
 {
 	game->mlx = mlx_init();
+	if(!game->mlx)
+		return (NULL);
 	game->mlx_win = mlx_new_window(game->mlx, map->columns * PXL, map->rows * PXL, "2D Game");
+	if(!game->mlx_win)
+		return (NULL);
 }
 
 void	ft_get_image(t_game *game, t_image *image)
@@ -35,6 +39,7 @@ void	ft_get_image(t_game *game, t_image *image)
 	image->exit_close = mlx_xpm_file_to_image(game->mlx, "images/exit_close.xpm", &p, &p);
 	image->wall = mlx_xpm_file_to_image(game->mlx, "images/Snowy_Wall.xpm", &p, &p);
 	image->floor = mlx_xpm_file_to_image(game->mlx, "images/Snowy_floor.xpm", &p, &p);
+	ft_check_image(game, image);
 }
 
 void	ft_image_type(t_game *game, t_map_data *map, t_image *image)
@@ -62,7 +67,6 @@ void	ft_render_map(t_game *game, t_map_data *map, t_image *image)
 	{
 		while(map->y < map->columns)
 		{
-			ft_printf("%c", map->fullmap[map->x][map->y]);
 			ft_image_type(game, map, image);
 			map->y++;
 		}

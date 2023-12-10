@@ -47,6 +47,8 @@ int	main(int argc, char *argv[])
 		ft_get_image(&game, &image);
 		ft_render_map(&game, &map, &image);
 		mlx_loop(game.mlx);
+		ft_mlx_destroy(&game, &map, &image);
+		ft_free_map(map);
 	}
 	else
 		ft_printf("Error\nWrong number of arguments! Expected: 2!\n");
