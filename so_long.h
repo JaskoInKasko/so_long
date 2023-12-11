@@ -70,4 +70,7 @@ void	ft_get_image(t_game *game, t_image *image);
 void	ft_image_type(t_game *game, t_map_data *map, t_image *image);
 void	ft_render_map(t_game *game, t_map_data *map, t_image *image);
 
+//		GAME_UTILS
+void    ft_free_all(t_game *game, t_map_data *map, t_image *image);
+
 #endif

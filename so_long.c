@@ -46,9 +46,10 @@ int	main(int argc, char *argv[])
 		ft_mlx_init(&game, &map);
 		ft_get_image(&game, &image);
 		ft_render_map(&game, &map, &image);
+		mlx_hook(game.mlx_win, 2, 1L<<0, close, &map);
+		//mlx_key_hook(game.mlx_win, 2, &map);
 		mlx_loop(game.mlx);
-		ft_mlx_destroy(&game, &map, &image);
-		ft_free_map(map);
+		ft_free_all(&game, &map, &image);
 	}
 	else
 		ft_printf("Error\nWrong number of arguments! Expected: 2!\n");

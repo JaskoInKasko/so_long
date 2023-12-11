@@ -1,5 +1,5 @@
 #include "so_long.h"
-void    ft_mlx_destroy(t_game *game, t_image *image)
+void    ft_free_all(t_game *game, t_map_data *map, t_image *image)
 {
     mlx_destroy_image(game->mlx, image->wall);
     mlx_destroy_image(game->mlx, image->floor);
@@ -14,18 +14,7 @@ void    ft_mlx_destroy(t_game *game, t_image *image)
     mlx_destroy_image(game->mlx, image->player_left2);
     mlx_destroy_image(game->mlx, image->player_right);
     mlx_destroy_image(game->mlx, image->player_right2);
-    mlx_destroy_window(game->mlx_win);
-
-}
-
-void    ft_check_image(t_game *game, t_map_data *map, t_image *image)
-{
-    if(!image);
-	{
-		ft_free_map(map);
-        ft_mlx_destroy(game, image);
-		free(game->mlx);
-        free(game->mlx_win)
-        exit(EXIT_FAILURE);
-	}
+	mlx_destroy_window(game->mlx, game->mlx_win);
+	mlx_destroy_display(game->mlx);
+    ft_free_map(map);
 }
