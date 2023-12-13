@@ -1,7 +1,10 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 HEAD = ft_printf.h
-SRC = ft_map_valid_path.c game.c map.c map_utils.c so_long.c ft_free_mlx.c included_functions/get_next_line/get_next_line_utils.c included_functions/get_next_line/get_next_line.c
+SRC = so_long.c game.c map.c map_utils.c ft_map_valid_path.c events.c\
+ft_free_mlx.c included_functions/get_next_line/get_next_line_utils.c\
+included_functions/get_next_line/get_next_line.c\
+
 
 OBJ = $(SRC:.c=.o)
 NAME = so_long

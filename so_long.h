@@ -1,24 +1,20 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include <mlx.h>
+# include <X11/X.h>
 # include "included_functions/libft/libft.h"
 # include "included_functions/ft_printf/ft_printf.h"
 # include "included_functions/get_next_line/get_next_line.h"
 
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT  1080
+//		WINDOW MANAGEMENT
 # define PXL 100
-typedef struct s_game
-{
-	void	*mlx;
-	void	*mlx_win;
-	int	player_x;
-	int	player_y;
-	int	coin_x;
-	int	coin_y;
-	int	exit_x;
-	int	exit_y;
-}	t_game;
+
+//		KEYCODE
+# define ESC 53
+# define Key_UP 119
+# define Key_DOWN 115
+# define Key_LEFT 97
+# define Key_RIGHT 100
 
 typedef struct s_image
 {
@@ -54,6 +50,24 @@ typedef struct s_map_data
 	char	**fullmap_cpy;
 }	t_map_data;
 
+typedef struct s_game
+{
+	void	*mlx;
+	void	*mlx_win;
+	int	player_x;
+	int	player_y;
+	int	coin_x;
+	int	coin_y;
+	int	exit_x;
+	int	exit_y;
+	int	pl_up;
+	int	pl_down;
+	int	pl_left;
+	int	pl_right;
+	t_map_data *map;
+	t_image image;
+}	t_game;
+
 //		MAP
 int		ft_valid_map(t_game *game, t_map_data *map);
 
@@ -66,11 +80,14 @@ void	ft_map_valid_path(t_game *game, t_map_data *map);
 
 //		GAME
 void	ft_mlx_init(t_game *game, t_map_data *map);
-void	ft_get_image(t_game *game, t_image *image);
-void	ft_image_type(t_game *game, t_map_data *map, t_image *image);
-void	ft_render_map(t_game *game, t_map_data *map, t_image *image);
+void	ft_get_image(t_game *game);
+void	ft_image_type(t_game *game, t_map_data *map);
+void	ft_render_map(t_game *game, t_map_data *map);
 
-//		GAME_UTILS
+//		FREE_MLX
 void    ft_free_all(t_game *game, t_map_data *map, t_image *image);
+
+//		EVENTS
+int		key_hook(int keycode, t_game *game);
 
 #endif

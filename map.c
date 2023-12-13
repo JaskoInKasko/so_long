@@ -111,5 +111,6 @@ int	ft_valid_map(t_game *game, t_map_data *map)
 	ft_map_lines_len_and_char(map);
 	ft_map_is_wall_and_no_dup(game, map);
 	ft_map_valid_path(game, map);
+	game->map = map;
 	return (1);
 }

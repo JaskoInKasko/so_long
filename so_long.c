@@ -19,6 +19,10 @@ void	ft_game_init(t_game *game)
 	game->coin_y = 0;
 	game->exit_x = 0;
 	game->exit_y = 0;
+	game->pl_up = 1;
+	game->pl_down = 1;
+	game->pl_left = 1;
+	game->pl_right = 1;
 }
 
 void	ft_map_init(t_map_data *map, char *argv[])
@@ -44,10 +48,9 @@ int	main(int argc, char *argv[])
 		ft_map_init(&map, argv);
 		ft_valid_map(&game, &map);
 		ft_mlx_init(&game, &map);
-		ft_get_image(&game, &image);
-		ft_render_map(&game, &map, &image);
-		mlx_hook(game.mlx_win, 2, 1L<<0, close, &map);
-		//mlx_key_hook(game.mlx_win, 2, &map);
+		ft_get_image(&game);
+		ft_render_map(&game, &map);
+		mlx_key_hook(game.mlx_win, key_hook, &game);
 		mlx_loop(game.mlx);
 		ft_free_all(&game, &map, &image);
 	}
