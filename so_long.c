@@ -51,6 +51,7 @@ int	main(int argc, char *argv[])
 		ft_get_image(&game);
 		ft_render_map(&game, &map);
 		mlx_key_hook(game.mlx_win, key_hook, &game);
+		//mlx_loop_hook();
 		mlx_loop(game.mlx);
 		ft_free_all(&game, &map, &image);
 	}
