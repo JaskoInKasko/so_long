@@ -22,7 +22,7 @@ void ft_map_traverse(t_map_data *map, int x, int y)
         map->fullmap_cpy[map->x][map->y] = '1';
     else if(current == 'C')
     {
-        map->flagC--;
+        map->flagC2--;
         map->fullmap_cpy[map->x][map->y] = '1';
     }
     else if(current == 'E')
@@ -41,7 +41,7 @@ void ft_map_traverse(t_map_data *map, int x, int y)
 void ft_map_valid_path(t_game *game, t_map_data *map)
 {
     ft_map_traverse(map, game->player_x, game->player_y);
-    if (map->flagC != 0 || map->flagE != 0)
+    if (map->flagC2 != 0 || map->flagE != 0)
         ft_map_errors(map, 60);
 }
 

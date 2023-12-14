@@ -22,6 +22,28 @@ void	ft_mlx_init(t_game *game, t_map_data *map)
 	game->mlx_win = mlx_new_window(game->mlx, map->columns * PXL, map->rows * PXL, "2D Game");
 }
 
+/*int player_animation(t_game *game)
+{
+	static int frames;
+
+	if(frames == 0)
+		mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.player_still,
+			game->player_y * PXL, game->player_x * PXL);
+	if(frames == 4000)
+		mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.player_still2,
+			game->player_y * PXL, game->player_x * PXL);
+	if(frames == 8000)
+		mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.player_still3,
+			game->player_y * PXL, game->player_x * PXL);
+	if(frames == 12000)
+		mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.player_still4,
+			game->player_y * PXL, game->player_x * PXL);
+	frames += 1;
+	if(frames == 12001)
+		frames = 0;
+	return (0);
+}*/
+
 void	ft_get_image(t_game *game)
 {
 	int	p;
@@ -40,6 +62,10 @@ void	ft_get_image(t_game *game)
 	game->image.exit_close = mlx_xpm_file_to_image(game->mlx, "images/exit_close.xpm", &p, &p);
 	game->image.wall = mlx_xpm_file_to_image(game->mlx, "images/Snowy_Wall.xpm", &p, &p);
 	game->image.floor = mlx_xpm_file_to_image(game->mlx, "images/Snowy_Floor.xpm", &p, &p);
+	game->image.player_still = mlx_xpm_file_to_image(game->mlx, "images/Gojo_still.xpm", &p, &p);
+	game->image.player_still2 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_still2.xpm", &p, &p);
+	game->image.player_still3 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_still3.xpm", &p, &p);
+	game->image.player_still4 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_still4.xpm", &p, &p);
 }
 
 void	ft_image_type(t_game *game, t_map_data *map)

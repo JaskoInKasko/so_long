@@ -35,6 +35,7 @@ void	ft_map_init(t_map_data *map, char *argv[])
 	map->flagP = 0;
     map->flagE = 0;
 	map->flagC = 0;
+	map->flagC2 = 0;
 }
 
 int	main(int argc, char *argv[])
@@ -45,13 +46,14 @@ int	main(int argc, char *argv[])
 
 	if (argc == 2)
 	{
+		ft_game_init(&game);
 		ft_map_init(&map, argv);
 		ft_valid_map(&game, &map);
 		ft_mlx_init(&game, &map);
 		ft_get_image(&game);
 		ft_render_map(&game, &map);
 		mlx_key_hook(game.mlx_win, key_hook, &game);
-		//mlx_loop_hook();
+		//mlx_loop_hook(game.mlx, player_animation, &game);
 		mlx_loop(game.mlx);
 		ft_free_all(&game, &map, &image);
 	}

@@ -78,6 +78,7 @@ void	ft_get_positions(t_game *game, t_map_data *map)
 		game->coin_x = map->x;
 		game->coin_y = map->y;
 		map->flagC++;
+		map->flagC2 = map->flagC;
 	}
 }
 

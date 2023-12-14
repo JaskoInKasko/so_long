@@ -26,6 +26,10 @@ typedef struct s_image
 	void	*player_left2;
 	void	*player_right;
 	void	*player_right2;
+	void	*player_still;
+	void	*player_still2;
+	void	*player_still3;
+	void	*player_still4;
 	void	*coin;
 	void	*exit_open;
 	void	*exit_close;
@@ -46,6 +50,7 @@ typedef struct s_map_data
 	int		flagP;
 	int		flagE;
 	int		flagC;
+	int		flagC2;
 	char	**fullmap;
 	char	**fullmap_cpy;
 }	t_map_data;
@@ -83,6 +88,9 @@ void	ft_mlx_init(t_game *game, t_map_data *map);
 void	ft_get_image(t_game *game);
 void	ft_image_type(t_game *game, t_map_data *map);
 void	ft_render_map(t_game *game, t_map_data *map);
+
+//		GAME_UTILS
+int		player_animation(t_game *game);
 
 //		FREE_MLX
 void    ft_free_all(t_game *game, t_map_data *map, t_image *image);
