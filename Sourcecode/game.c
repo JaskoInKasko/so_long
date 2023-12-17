@@ -27,24 +27,24 @@ void	ft_get_image(t_game *game)
 	int	p;
 
 	p = PXL;
-	game->image.player_up = mlx_xpm_file_to_image(game->mlx, "images/Gojo_up.xpm", &p, &p);
-	game->image.player_up2 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_up2.xpm", &p, &p);
-	game->image.player_down = mlx_xpm_file_to_image(game->mlx, "images/Gojo_right.xpm", &p, &p);
-	game->image.player_down2 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_right2.xpm", &p, &p);
-	game->image.player_left = mlx_xpm_file_to_image(game->mlx, "images/Gojo_left.xpm", &p, &p);
-	game->image.player_left2 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_left2.xpm", &p, &p);
-	game->image.player_right = mlx_xpm_file_to_image(game->mlx, "images/Gojo_right.xpm", &p, &p);
-	game->image.player_right2 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_right2.xpm", &p, &p);
-	game->image.coin = mlx_xpm_file_to_image(game->mlx, "images/Collectible.xpm", &p, &p);
-	game->image.exit_open = mlx_xpm_file_to_image(game->mlx, "images/exit_open.xpm", &p, &p);
-	game->image.exit_close = mlx_xpm_file_to_image(game->mlx, "images/exit_close.xpm", &p, &p);
-	game->image.wall = mlx_xpm_file_to_image(game->mlx, "images/Snowy_Wall.xpm", &p, &p);
-	game->image.floor = mlx_xpm_file_to_image(game->mlx, "images/Snowy_Floor.xpm", &p, &p);
-	game->image.player_still = mlx_xpm_file_to_image(game->mlx, "images/Gojo_still.xpm", &p, &p);
-	game->image.player_still2 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_still2.xpm", &p, &p);
-	game->image.player_still3 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_still3.xpm", &p, &p);
-	game->image.player_still4 = mlx_xpm_file_to_image(game->mlx, "images/Gojo_still4.xpm", &p, &p);
-	game->image.victory = mlx_xpm_file_to_image(game->mlx, "images/victory.xpm", &p, &p);
+	game->image.player_up = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_up.xpm", &p, &p);
+	game->image.player_up2 = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_up2.xpm", &p, &p);
+	game->image.player_down = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_right.xpm", &p, &p);
+	game->image.player_down2 = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_right2.xpm", &p, &p);
+	game->image.player_left = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_left.xpm", &p, &p);
+	game->image.player_left2 = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_left2.xpm", &p, &p);
+	game->image.player_right = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_right.xpm", &p, &p);
+	game->image.player_right2 = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_right2.xpm", &p, &p);
+	game->image.coin = mlx_xpm_file_to_image(game->mlx, "../images/Collectible.xpm", &p, &p);
+	game->image.exit_open = mlx_xpm_file_to_image(game->mlx, "../images/exit_open.xpm", &p, &p);
+	game->image.exit_close = mlx_xpm_file_to_image(game->mlx, "../images/exit_close.xpm", &p, &p);
+	game->image.wall = mlx_xpm_file_to_image(game->mlx, "../images/Snowy_Wall.xpm", &p, &p);
+	game->image.floor = mlx_xpm_file_to_image(game->mlx, "../images/Snowy_Floor.xpm", &p, &p);
+	game->image.player_still = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_still.xpm", &p, &p);
+	game->image.player_still2 = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_still2.xpm", &p, &p);
+	game->image.player_still3 = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_still3.xpm", &p, &p);
+	game->image.player_still4 = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_still4.xpm", &p, &p);
+	game->image.victory = mlx_xpm_file_to_image(game->mlx, "../images/victory.xpm", &p, &p);
 }
 
 void	ft_image_type(t_game *game, t_map_data *map)
