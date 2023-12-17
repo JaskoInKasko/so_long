@@ -23,6 +23,8 @@ void	ft_game_init(t_game *game)
 	game->pl_down = 1;
 	game->pl_left = 1;
 	game->pl_right = 1;
+	game->moves = 0;
+	game->win = 0;
 }
 
 void	ft_map_init(t_map_data *map, char *argv[])
@@ -42,7 +44,6 @@ int	main(int argc, char *argv[])
 {
 	t_map_data	map;
 	t_game		game;
-	t_image		image;
 
 	if (argc == 2)
 	{
@@ -53,9 +54,9 @@ int	main(int argc, char *argv[])
 		ft_get_image(&game);
 		ft_render_map(&game, &map);
 		mlx_key_hook(game.mlx_win, key_hook, &game);
-		//mlx_loop_hook(game.mlx, player_animation, &game);
+		mlx_loop_hook(game.mlx, player_animation, &game);
 		mlx_loop(game.mlx);
-		ft_free_all(&game, &map, &image);
+		ft_free_all(&game);
 	}
 	else
 		ft_printf("Error\nWrong number of arguments! Expected: 2!\n");

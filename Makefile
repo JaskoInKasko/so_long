@@ -1,8 +1,8 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 HEAD = ft_printf.h
-SRC = so_long.c game.c map.c map_utils.c ft_map_valid_path.c events.c\
-ft_free_mlx.c included_functions/get_next_line/get_next_line_utils.c\
+SRC = so_long.c game.c game_utils.c map.c map_utils.c ft_map_valid_path.c events.c\
+included_functions/get_next_line/get_next_line_utils.c\
 included_functions/get_next_line/get_next_line.c\
 
 

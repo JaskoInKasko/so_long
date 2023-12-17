@@ -10,7 +10,7 @@
 # define PXL 100
 
 //		KEYCODE
-# define ESC 53
+# define ESC 65307
 # define Key_UP 119
 # define Key_DOWN 115
 # define Key_LEFT 97
@@ -35,6 +35,7 @@ typedef struct s_image
 	void	*exit_close;
 	void	*wall;
 	void	*floor;
+	void	*victory;
 }	t_image;
 
 typedef struct s_map_data
@@ -69,6 +70,8 @@ typedef struct s_game
 	int	pl_down;
 	int	pl_left;
 	int	pl_right;
+	int	moves;
+	int	win;
 	t_map_data *map;
 	t_image image;
 }	t_game;
@@ -88,12 +91,13 @@ void	ft_mlx_init(t_game *game, t_map_data *map);
 void	ft_get_image(t_game *game);
 void	ft_image_type(t_game *game, t_map_data *map);
 void	ft_render_map(t_game *game, t_map_data *map);
+void	ft_close(t_game *game);
 
 //		GAME_UTILS
 int		player_animation(t_game *game);
-
-//		FREE_MLX
-void    ft_free_all(t_game *game, t_map_data *map, t_image *image);
+void    ft_outcome(t_game *game);
+void    ft_free_all(t_game *game);
+void	ft_victory(t_game *game);
 
 //		EVENTS
 int		key_hook(int keycode, t_game *game);
