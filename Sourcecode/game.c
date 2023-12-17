@@ -64,10 +64,11 @@ void	ft_image_type(t_game *game, t_map_data *map)
 		mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.exit_close, map->y * PXL, map->x * PXL);
 }
 
-void	ft_close(t_game *game)
+int	ft_close(t_game *game)
 {
 	ft_free_all(game);
 	exit(EXIT_SUCCESS);
+	return (0);
 }
 
 void	ft_render_map(t_game *game, t_map_data *map)

@@ -91,7 +91,7 @@ void	ft_mlx_init(t_game *game, t_map_data *map);
 void	ft_get_image(t_game *game);
 void	ft_image_type(t_game *game, t_map_data *map);
 void	ft_render_map(t_game *game, t_map_data *map);
-void	ft_close(t_game *game);
+int		ft_close(t_game *game);
 
 //		GAME_UTILS
 int		player_animation(t_game *game);
