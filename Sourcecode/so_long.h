@@ -2,9 +2,9 @@
 # define SO_LONG_H
 # include <mlx.h>
 # include <X11/X.h>
-# include "included_functions/libft/libft.h"
-# include "included_functions/ft_printf/ft_printf.h"
-# include "included_functions/get_next_line/get_next_line.h"
+# include "../included_functions/libft/libft.h"
+# include "../included_functions/ft_printf/ft_printf.h"
+# include "../included_functions/get_next_line/get_next_line.h"
 
 //		WINDOW MANAGEMENT
 # define PXL 100
