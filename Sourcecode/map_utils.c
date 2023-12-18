@@ -6,7 +6,7 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 17:13:05 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/11/27 17:13:11 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:27:48 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -65,20 +65,18 @@ void	ft_get_positions(t_game *game, t_map_data *map)
 	{
 		game->player_x = map->x;
 		game->player_y = map->y;
-		map->flagP++;
+		map->flagp++;
 	}
 	if (map->fullmap[map->x][map->y] == 'E')
 	{
 		game->exit_x = map->x;
 		game->exit_y = map->y;
-		map->flagE++;
+		map->flage++;
 	}
 	if (map->fullmap[map->x][map->y] == 'C')
 	{
-		game->coin_x = map->x;
-		game->coin_y = map->y;
-		map->flagC++;
-		map->flagC2 = map->flagC;
+		map->flagc++;
+		map->flagc2 = map->flagc;
 	}
 }
 

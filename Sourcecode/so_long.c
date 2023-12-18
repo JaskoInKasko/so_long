@@ -6,7 +6,7 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 17:12:48 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/11/27 17:12:53 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:10:09 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -15,8 +15,6 @@ void	ft_game_init(t_game *game)
 {
 	game->player_x = 0;
 	game->player_y = 0;
-	game->coin_x = 0;
-	game->coin_y = 0;
 	game->exit_x = 0;
 	game->exit_y = 0;
 	game->pl_up = 1;
@@ -34,10 +32,10 @@ void	ft_map_init(t_map_data *map, char *argv[])
 	map->rows = 0;
 	map->x = 1;
 	map->y = 0;
-	map->flagP = 0;
-    map->flagE = 0;
-	map->flagC = 0;
-	map->flagC2 = 0;
+	map->flagp = 0;
+	map->flage = 0;
+	map->flagc = 0;
+	map->flagc2 = 0;
 }
 
 int	main(int argc, char *argv[])
