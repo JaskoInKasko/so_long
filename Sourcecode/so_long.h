@@ -101,15 +101,21 @@ void	ft_map_valid_path(t_game *game, t_map_data *map);
 //		GAME
 void	ft_mlx_init(t_game *game, t_map_data *map);
 void	ft_get_image(t_game *game);
+void	ft_get_image2(t_game *game, int p);
 void	ft_image_type(t_game *game, t_map_data *map);
 void	ft_render_map(t_game *game, t_map_data *map);
-int		ft_close(t_game *game);
 
 //		GAME_UTILS
 int		player_animation(t_game *game);
+void	player_animation2(t_game *game, int *frames);
+void	coin_animation(t_game *game, int *frames_coin);
+void	coin_animation2(t_game *game, int **frames_coin);
+
+//		GAME_UTILS_2
+void	ft_victory(t_game *game);
+int		ft_close(t_game *game);
 void	ft_outcome(t_game *game);
 void	ft_free_all(t_game *game);
-void	ft_victory(t_game *game);
 
 //		EVENTS
 int		key_hook(int keycode, t_game *game);
