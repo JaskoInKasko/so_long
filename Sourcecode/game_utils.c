@@ -37,7 +37,7 @@ void	coin_animation(t_game *game, int *frames_coin)
 		{
 			if (game->map->flagc != 0
 				&& game->map->fullmap[game->map->x][game->map->y] == 'C')
-				coin_animation2(game, &*frames_coin);
+				coin_animation2(game, &frames_coin);
 			game->map->y++;
 		}
 		game->map->y = 0;

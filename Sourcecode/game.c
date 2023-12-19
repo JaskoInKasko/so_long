@@ -16,6 +16,7 @@ void	ft_mlx_init(t_game *game, t_map_data *map)
 	game->mlx = mlx_init();
 	if (!game->mlx)
 	{
+		ft_free_map(map);
 		ft_printf("Error\nInitialization has failed!\n");
 		exit(EXIT_FAILURE);
 	}
