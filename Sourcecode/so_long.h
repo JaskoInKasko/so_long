@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 21:03:29 by jsakanov          #+#    #+#             */
+/*   Updated: 2023/12/18 21:09:16 by jsakanov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include <mlx.h>
@@ -11,10 +22,10 @@
 
 //		KEYCODE
 # define ESC 65307
-# define Key_UP 119
-# define Key_DOWN 115
-# define Key_LEFT 97
-# define Key_RIGHT 100
+# define KEY_UP 119
+# define KEY_DOWN 115
+# define KEY_LEFT 97
+# define KEY_RIGHT 100
 
 typedef struct s_image
 {
@@ -31,6 +42,8 @@ typedef struct s_image
 	void	*player_still3;
 	void	*player_still4;
 	void	*coin;
+	void	*coin2;
+	void	*coin3;
 	void	*exit_open;
 	void	*exit_close;
 	void	*wall;
@@ -48,32 +61,31 @@ typedef struct s_map_data
 	int		rows;
 	int		x;
 	int		y;
-	int		flagP;
-	int		flagE;
-	int		flagC;
-	int		flagC2;
+	int		flagp;
+	int		flage;
+	int		flagc;
+	int		flagc2;
 	char	**fullmap;
 	char	**fullmap_cpy;
 }	t_map_data;
 
 typedef struct s_game
 {
-	void	*mlx;
-	void	*mlx_win;
-	int	player_x;
-	int	player_y;
-	int	coin_x;
-	int	coin_y;
-	int	exit_x;
-	int	exit_y;
-	int	pl_up;
-	int	pl_down;
-	int	pl_left;
-	int	pl_right;
-	int	moves;
-	int	win;
-	t_map_data *map;
-	t_image image;
+	void		*mlx;
+	void		*mlx_win;
+	int			player_x;
+	int			player_y;
+	int			exit_x;
+	int			exit_y;
+	int			pl_up;
+	int			pl_down;
+	int			pl_left;
+	int			pl_right;
+	int			moves;
+	int			win;
+	t_map_data	*map;
+	t_image		image;
+
 }	t_game;
 
 //		MAP
@@ -95,8 +107,8 @@ int		ft_close(t_game *game);
 
 //		GAME_UTILS
 int		player_animation(t_game *game);
-void    ft_outcome(t_game *game);
-void    ft_free_all(t_game *game);
+void	ft_outcome(t_game *game);
+void	ft_free_all(t_game *game);
 void	ft_victory(t_game *game);
 
 //		EVENTS

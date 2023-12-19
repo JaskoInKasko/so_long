@@ -72,7 +72,7 @@ int	ft_map_is_wall_and_no_dup(t_game *game, t_map_data *map)
 		map->y = 0;
 	}
 	map->x = 0;
-	if (map->flagP != 1 || map->flagE != 1 || map->flagC < 1)
+	if (map->flagp != 1 || map->flage != 1 || map->flagc < 1)
 		ft_map_errors(map, 55);
 	return (1);
 }

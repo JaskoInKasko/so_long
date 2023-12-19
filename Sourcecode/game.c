@@ -6,7 +6,7 @@
 /*   By: jsakanov <jsakanov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:50:57 by jsakanov          #+#    #+#             */
-/*   Updated: 2023/12/06 15:40:24 by jsakanov         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:25:42 by jsakanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -14,12 +14,13 @@
 void	ft_mlx_init(t_game *game, t_map_data *map)
 {
 	game->mlx = mlx_init();
-	if(!game->mlx)
+	if (!game->mlx)
 	{
 		ft_printf("Error\nInitialization has failed!\n");
 		exit(EXIT_FAILURE);
 	}
-	game->mlx_win = mlx_new_window(game->mlx, map->columns * PXL, map->rows * PXL, "2D Game");
+	game->mlx_win = mlx_new_window(game->mlx,
+			map->columns * PXL, map->rows * PXL, "2D Game");
 }
 
 void	ft_get_image(t_game *game)
@@ -36,6 +37,8 @@ void	ft_get_image(t_game *game)
 	game->image.player_right = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_right.xpm", &p, &p);
 	game->image.player_right2 = mlx_xpm_file_to_image(game->mlx, "../images/Gojo_right2.xpm", &p, &p);
 	game->image.coin = mlx_xpm_file_to_image(game->mlx, "../images/Collectible.xpm", &p, &p);
+	game->image.coin2 = mlx_xpm_file_to_image(game->mlx, "../images/Collectible2.xpm", &p, &p);
+	game->image.coin3 = mlx_xpm_file_to_image(game->mlx, "../images/Collectible3.xpm", &p, &p);
 	game->image.exit_open = mlx_xpm_file_to_image(game->mlx, "../images/exit_open.xpm", &p, &p);
 	game->image.exit_close = mlx_xpm_file_to_image(game->mlx, "../images/exit_close.xpm", &p, &p);
 	game->image.wall = mlx_xpm_file_to_image(game->mlx, "../images/Snowy_Wall.xpm", &p, &p);
@@ -85,4 +88,6 @@ void	ft_render_map(t_game *game, t_map_data *map)
 		map->y = 0;
 		map->x++;
 	}
+	game->map->x = 0;
+	game->map->y = 0;
 }
