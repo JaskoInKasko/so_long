@@ -51,6 +51,25 @@ void	ft_outcome(t_game *game)
 	}
 }
 
+void	ft_nullcheck_image(t_game *game)
+{
+	if (!game->image.player_up || !game->image.player_up2
+		|| !game->image.player_down || !game->image.player_down2
+		|| !game->image.player_left || !game->image.player_left2
+		|| !game->image.player_right || !game->image.player_right2
+		|| !game->image.coin || !game->image.coin2 || !game->image.coin3
+		|| !game->image.exit_open || !game->image.exit_close
+		|| !game->image.wall || !game->image.floor
+		|| !game->image.player_still || !game->image.player_still2
+		|| !game->image.player_still3 || !game->image.player_still4
+		|| !game->image.victory)
+	{
+		ft_free_map(game->map);
+		ft_printf("Error\nImage assignment has failed!\n");
+		exit(EXIT_FAILURE);
+	}
+}
+
 void	ft_free_all(t_game *game)
 {
 	mlx_destroy_image(game->mlx, game->image.wall);

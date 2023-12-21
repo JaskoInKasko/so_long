@@ -115,6 +115,7 @@ void	coin_animation2(t_game *game, int **frames_coin);
 void	ft_victory(t_game *game);
 int		ft_close(t_game *game);
 void	ft_outcome(t_game *game);
+void	ft_nullcheck_image(t_game *game);
 void	ft_free_all(t_game *game);
 
 //		EVENTS

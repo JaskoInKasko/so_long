@@ -22,6 +22,12 @@ void	ft_mlx_init(t_game *game, t_map_data *map)
 	}
 	game->mlx_win = mlx_new_window(game->mlx,
 			map->columns * PXL, map->rows * PXL, "2D Game");
+	if (!game->mlx)
+	{
+		ft_free_map(map);
+		ft_printf("Error\nWindow initialization has failed!\n");
+		exit(EXIT_FAILURE);
+	}
 }
 
 void	ft_get_image(t_game *game)
@@ -48,6 +54,7 @@ void	ft_get_image(t_game *game)
 	game->image.coin = mlx_xpm_file_to_image(game->mlx,
 			"../images/Collectible.xpm", &p, &p);
 	ft_get_image2(game, p);
+	ft_nullcheck_image(game);
 }
 
 void	ft_get_image2(t_game *game, int p)
