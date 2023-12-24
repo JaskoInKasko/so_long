@@ -22,9 +22,10 @@ void	ft_mlx_init(t_game *game, t_map_data *map)
 	}
 	game->mlx_win = mlx_new_window(game->mlx,
 			map->columns * PXL, map->rows * PXL, "2D Game");
-	if (!game->mlx)
+	if (!game->mlx_win)
 	{
 		ft_free_map(map);
+		free(game->mlx);
 		ft_printf("Error\nWindow initialization has failed!\n");
 		exit(EXIT_FAILURE);
 	}
