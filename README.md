@@ -20,10 +20,10 @@ The project includes:
 
 ## How to execute the project
 
-Navigate to the project directory:
+Navigate to the where the Makefile is:
 
 ```bash
-cd so_long
+cd Sourcecode
 ```
 
 Compile the project using the Makefile:
